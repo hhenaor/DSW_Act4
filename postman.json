@@ -1,0 +1,147 @@
+{
+  "info": {
+    "_postman_id": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+    "name": "API Asignaturas",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Registrar Usuario",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"usuario0\",\n  \"password\": \"contrasena0\",\n  \"nombre\": \"usuario0 nombre\",\n  \"email\": \"usuario0@example.com\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/register",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "auth", "register"]
+            }
+          }
+        },
+        {
+          "name": "Login Usuario",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"usuario0\",\n  \"password\": \"contrasena0\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "auth", "login"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Asignaturas (CRUD)",
+      "item": [
+        {
+          "name": "Obtener Todas",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/asignaturas",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "asignaturas"]
+            }
+          }
+        },
+        {
+          "name": "Crear Asignatura",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nombre\": \"asignatura0\",\n  \"nombrecompleto\": \"asignatura0 completo\",\n  \"descripcion\": \"descripcion0\",\n  \"areaconocimiento\": \"tema1\",\n  \"carrera\": \"carrera0\",\n  \"numerocreditos\": 3,\n  \"contenidotematico\": \"tema1, tema2\",\n  \"semestre\": 1,\n  \"profesor\": \"profesor0\",\n  \"estudiante_id\": 1\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/asignaturas",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "asignaturas"]
+            }
+          }
+        },
+        {
+          "name": "Obtener Asignatura por ID",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/asignaturas/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "asignaturas", "1"]
+            }
+          }
+        },
+        {
+          "name": "Actualizar Asignatura",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"profesor\": \"profesor0\",\n  \"numerocreditos\": 4,\n  \"descripcion\": \"actualizado tema1\"\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/asignaturas/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "asignaturas", "1"]
+            }
+          }
+        },
+        {
+          "name": "Eliminar Asignatura",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}", "type": "text" }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/asignaturas/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "asignaturas", "1"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
